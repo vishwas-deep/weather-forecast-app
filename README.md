@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Weather Dashboard App
+This is a responsive weather dashboard application built with React and CSS3, designed to provide users with real-time weather information for cities worldwide. The app retrieves data from the Open-Meteo API and displays detailed weather information such as temperature, humidity, wind speed, and a 5-day forecast.
+![web view](image-1.png)
+![mobile view](image-2.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+1. User Interface
+Responsive Design: The app adapts seamlessly to both desktop and mobile devices.
+Search Functionality: Users can search for any city to get its current weather data.
+Weather Details: Displayed information includes:
+Temperature (Celsius/Fahrenheit toggle)
+Humidity
+Wind Speed
+General weather conditions (e.g., sunny, cloudy)
 
-## Available Scripts
+2. API Integration
+Open-Meteo API: The app retrieves weather data using the Open-Meteo API.
+Error Handling: An error message is displayed if the city is not found or if there are issues with the API request.
 
-In the project directory, you can run:
+3. Additional Features
+5-Day Forecast: The app provides a 5-day weather forecast, showing temperature trends and weather conditions.
+Geolocation: Users can click a button to fetch and display the weather for their current location using geolocation.
+Celsius/Fahrenheit Toggle: Users can switch between Celsius and Fahrenheit temperature displays.
+Local Storage: The app saves the last searched cities in the user's local storage for easy access on future visits.
 
-### `npm start`
+# Technologies Used
+React: Frontend framework for building user interfaces.
+CSS3: For responsive styling and layout.
+JavaScript (ES6+): To handle API calls and dynamic behavior.
+Open-Meteo API: To retrieve real-time weather data.
+Local Storage: To save and retrieve the user's last searched cities.
+HTML5: Markup language for structure.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Installation
+Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone https://github.com/yourusername/weather-dashboard-app.git
+Navigate into the project directory:
 
-### `npm test`
+cd weather-dashboard-app
+Install the dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install
+Start the development server:
 
-### `npm run build`
+npm start
+Open your browser and navigate to http://localhost:3000 to view the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Usage
+Search for a City: Use the search bar to type in the name of any city and press enter or click the search button. The app will display the current weather data along with a 5-day forecast for that city.
+Geolocation: Click on the "Use My Location" button to get the weather of your current location based on geolocation.
+Toggle Temperature Units: Switch between Celsius and Fahrenheit by clicking the toggle button.
+Access Recent Searches: The app saves your last searched cities, which are displayed for quick access.
