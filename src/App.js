@@ -7,17 +7,19 @@ import { fetchForecast, fetchWeather } from './utils';
 import { apiKey } from './apiKey';
 import Loader from './components/Loader';
 
+// conver temperature Celcius to Fahrenheit
 const convertTemp = (temp, unit) => {
     return unit === 'C' ? temp : (temp * 9 / 5 + 32).toFixed(1);
 };
 
 const App = () => {
+    // handle states
     const [weather, setWeather] = useState(null);
     const [forecast, setForecast] = useState([]);
     const [error, setError] = useState('');
     const [unit, setUnit] = useState('C');
     const [lastSearchedCities, setLastSearchedCities] = useState([]);
-    const [loading, setLoading] = useState(false); // Add loading state
+    const [loading, setLoading] = useState(false); 
 
     useEffect(() => {
         const savedCities = JSON.parse(localStorage.getItem('lastSearchedCities')) || [];
@@ -64,6 +66,7 @@ const App = () => {
                         // fetch the forecast for the current location
                         const forecastData = await fetchForecast(lat, lon, unit);
                         setForecast(forecastData);
+                        setError('')
                     } catch (error) {
                         setError(error.message || 'Error fetching weather data');
                     }
@@ -92,12 +95,13 @@ const App = () => {
             <div className='wrapper'>
                 {loading ? <Loader /> :
                     <>
+                        {!weather && forecast.length === 0 && !error && <p className='error'>Start searching weather by cities</p>}
                         {error && <p className='error'>{error}</p>}
                         {!error && weather && <Card unit={unit} weather={{ ...weather, temp: convertTemp(weather.temp, unit) }} />}
                         {!error && forecast.length > 0 && <DayWiseForecastCard unit={unit} forecast={forecast.map(day => ({
                             ...day,
                             temp: convertTemp(day.temp, unit),
-                        }))} />}
+                        }))} />}                        
                     </>
                 }
             </div>

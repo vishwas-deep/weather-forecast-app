@@ -88,10 +88,6 @@
   -webkit-line-clamp: 1;
 }
 
-.searchList li:first-child {
-  background-color: rgb(91, 90, 152);
-}
-
 .searchList li:hover {
   background-color: rgb(113, 112, 178);
 }

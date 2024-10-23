@@ -75,6 +75,7 @@ export const fetchWeather = async (city, unit, setWeather, setForecast, lastSear
             const updatedCities = [city, ...lastSearchedCities.filter(c => c.toLowerCase() !== city.toLowerCase())].slice(0, 5);
             setLastSearchedCities(updatedCities);            
             localStorage.setItem('lastSearchedCities', JSON.stringify(updatedCities));
+            setError('');
         } else {
             setError('City not found or no data available');
         }

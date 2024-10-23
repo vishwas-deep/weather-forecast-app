@@ -3,6 +3,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { FaTemperatureLow } from "react-icons/fa";
 import '../styles/dayWiseForecastCard.css'
 
+// format day
 const formatDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -17,6 +18,7 @@ const formatDate = (dateString) => {
     };
     return `${day}${suffix(day)} ${date.toLocaleDateString('en-GB', { month: 'short' })}`;
 };
+
 
 const DayWiseForecastCard = ({ unit, forecast }) => {
 
